@@ -5,15 +5,12 @@ from datetime import date, datetime, timedelta
 
 file = open('files/data-'+datetime.now().strftime('%d-%m-%Y')+'.json',)
  
-# returns JSON object as
-# a dictionary
 data = json.load(file)
 today = datetime.today()
 daysAgo7 = today - timedelta(days=7)
 print(daysAgo7)
 exportFileName = 'Export-' + datetime.now().strftime('%d-%m-%Y')
 workbook = xlsxwriter.Workbook('files/'+exportFileName+'.xlsx')
-# workbook.add_format({'width':})
 worksheet = workbook.add_worksheet()
 worksheet.set_column(0,0,25)
 worksheet.set_column(1,1,10)
